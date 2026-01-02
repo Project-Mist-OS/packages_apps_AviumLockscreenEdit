@@ -94,8 +94,10 @@ fun LockscreenEditScreen(
     }
     
     val randomDate = remember {
-        val months = listOf("1月", "2月", "3月", "4月", "5月", "6月", 
-                          "7月", "8月", "9月", "10月", "11月", "12月")
+         val months = listOf(
+        "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" )
+
         val weekdays = listOf(
             context.getString(R.string.monday),
             context.getString(R.string.tuesday), 
@@ -108,7 +110,7 @@ fun LockscreenEditScreen(
         val day = Random.nextInt(1, 29)
         val month = months[Random.nextInt(months.size)]
         val weekday = weekdays[Random.nextInt(weekdays.size)]
-        "$month${day}日 $weekday"
+        "$month $day, $weekday"
     }
 
     Box(modifier = Modifier.fillMaxSize()) {
